@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Pedidos - Loja de Bolos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Sistema de Pedidos - Loja de Bolos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Formulário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cozinha">Cozinha</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Novo Pedido</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="pedidoForm">
+                            <div class="mb-3">
+                                <label for="nome_cliente" class="form-label">Nome do Cliente</label>
+                                <input type="text" class="form-control" id="nome_cliente" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tipo_bolo" class="form-label">Tipo de Bolo</label>
+                                <input type="text" class="form-control" id="tipo_bolo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cobertura" class="form-label">Cobertura</label>
+                                <input type="text" class="form-control" id="cobertura" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tamanho_bolo" class="form-label">Tamanho do Bolo</label>
+                                <select class="form-select" id="tamanho_bolo" required>
+                                    <option value="">Selecione o tamanho</option>
+                                    <option value="Pequeno">Pequeno</option>
+                                    <option value="Médio">Médio</option>
+                                    <option value="Grande">Grande</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="data_hora_entrega" class="form-label">Data e Hora de Entrega</label>
+                                <input type="datetime-local" class="form-control" id="data_hora_entrega" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="observacoes" class="form-label">Observações</label>
+                                <textarea class="form-control" id="observacoes" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="prioridade" class="form-label">Prioridade</label>
+                                <select class="form-select" id="prioridade" required>
+                                    <option value="">Selecione a prioridade</option>
+                                    <option value="Baixa">Baixa</option>
+                                    <option value="Média">Média</option>
+                                    <option value="Alta">Alta</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4>Histórico de Pedidos</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>Bolo</th>
+                                        <th>Entrega</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historicoPedidos">
+                                    <!-- Pedidos serão carregados aqui via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/formulario.js"></script>
+</body>
+</html>
